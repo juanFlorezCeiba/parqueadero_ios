@@ -1,0 +1,6 @@
+framework module Pods_parqueadero_ios {
+  umbrella header "Pods-parqueadero_ios-umbrella.h"
+
+  export *
+  module * { export * }
+}
