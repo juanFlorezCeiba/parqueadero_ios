@@ -9,7 +9,7 @@
 import UIKit
 import PKHUD
 
-class RegisterListViewViewController: UIViewController {
+class RegisterListView: UIViewController {
 
     //View variables
     @IBOutlet weak var registerTableView: UITableView!
@@ -51,7 +51,7 @@ class RegisterListViewViewController: UIViewController {
 
 //MARK: - RegisterListViewProtocol
 
-extension RegisterListViewViewController: RegisterListViewProtocol{
+extension RegisterListView: RegisterListViewProtocol{
     
     //Función para mostrar los registros.
     func showRegister(with registers: [Registro]) {
@@ -77,7 +77,7 @@ extension RegisterListViewViewController: RegisterListViewProtocol{
 
 //MARK: - TableViewDataSource and TableViewDelegate
 
-extension RegisterListViewViewController: UITableViewDataSource, UITableViewDelegate {
+extension RegisterListView: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -88,9 +88,11 @@ extension RegisterListViewViewController: UITableViewDataSource, UITableViewDele
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = registerTableView.dequeueReusableCell(withIdentifier: "RegisterCell", for: indexPath)
+        let cell = registerTableView.dequeueReusableCell(withIdentifier: "RegisterCell", for: indexPath) as! RegisterCell
         
         let register = registerList[indexPath.row]
+        
+        cell.set(forRegister: register)
         return cell
     }
 }

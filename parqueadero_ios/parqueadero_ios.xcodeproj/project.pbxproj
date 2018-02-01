@@ -12,6 +12,13 @@
 		B11EE28020233DED0031AF9A /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11EE27F20233DED0031AF9A /* Protocols.swift */; };
 		B11EE282202347490031AF9A /* RegisterListViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11EE281202347480031AF9A /* RegisterListViewViewController.swift */; };
 		B11EE284202347B10031AF9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B11EE283202347B10031AF9A /* Main.storyboard */; };
+		B11EE28620235EC20031AF9A /* RegisterListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11EE28520235EC20031AF9A /* RegisterListPresenter.swift */; };
+		B11EE288202361280031AF9A /* RegisterListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11EE287202361280031AF9A /* RegisterListInteractor.swift */; };
+		B11EE28C2023640C0031AF9A /* RegisterListRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11EE28B2023640C0031AF9A /* RegisterListRemoteDataManager.swift */; };
+		B11EE28E202367DC0031AF9A /* RegisterListWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11EE28D202367DC0031AF9A /* RegisterListWireframe.swift */; };
+		B11EE29720236D9A0031AF9A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11EE29620236D9A0031AF9A /* HomeViewController.swift */; };
+		B11EE29920237A670031AF9A /* TabTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11EE29820237A670031AF9A /* TabTwoViewController.swift */; };
+		B11EE29C2023905C0031AF9A /* RegisterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11EE29B2023905C0031AF9A /* RegisterCell.swift */; };
 		B17C13D42021EBCE000ED23E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17C13D32021EBCE000ED23E /* AppDelegate.swift */; };
 		B17C13DB2021EBCE000ED23E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B17C13DA2021EBCE000ED23E /* Assets.xcassets */; };
 		B17C13DE2021EBCE000ED23E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B17C13DC2021EBCE000ED23E /* LaunchScreen.storyboard */; };
@@ -49,6 +56,13 @@
 		B11EE27F20233DED0031AF9A /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		B11EE281202347480031AF9A /* RegisterListViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterListViewViewController.swift; sourceTree = "<group>"; };
 		B11EE283202347B10031AF9A /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B11EE28520235EC20031AF9A /* RegisterListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterListPresenter.swift; sourceTree = "<group>"; };
+		B11EE287202361280031AF9A /* RegisterListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterListInteractor.swift; sourceTree = "<group>"; };
+		B11EE28B2023640C0031AF9A /* RegisterListRemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterListRemoteDataManager.swift; sourceTree = "<group>"; };
+		B11EE28D202367DC0031AF9A /* RegisterListWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterListWireframe.swift; sourceTree = "<group>"; };
+		B11EE29620236D9A0031AF9A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		B11EE29820237A670031AF9A /* TabTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabTwoViewController.swift; sourceTree = "<group>"; };
+		B11EE29B2023905C0031AF9A /* RegisterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCell.swift; sourceTree = "<group>"; };
 		B17C13D02021EBCE000ED23E /* parqueadero_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = parqueadero_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B17C13D32021EBCE000ED23E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B17C13DA2021EBCE000ED23E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -107,6 +121,47 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B11EE289202363930031AF9A /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				B11EE28A202363AE0031AF9A /* Remote */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		B11EE28A202363AE0031AF9A /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				B11EE28B2023640C0031AF9A /* RegisterListRemoteDataManager.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		B11EE29420236D7B0031AF9A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B11EE29520236D8E0031AF9A /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B11EE29520236D8E0031AF9A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B11EE29620236D9A0031AF9A /* HomeViewController.swift */,
+				B11EE29820237A670031AF9A /* TabTwoViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B11EE29A202390480031AF9A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B11EE29B2023905C0031AF9A /* RegisterCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		B17C13C72021EBCE000ED23E = {
 			isa = PBXGroup;
 			children = (
@@ -132,10 +187,10 @@
 		B17C13D22021EBCE000ED23E /* parqueadero_ios */ = {
 			isa = PBXGroup;
 			children = (
+				B11EE29420236D7B0031AF9A /* Home */,
 				B17C140620220B00000ED23E /* Common */,
 				B17C140C20224B37000ED23E /* RegisterList */,
 				B17C140B20224B2E000ED23E /* Entities */,
-				B17C14022021EDC4000ED23E /* Model */,
 				B17C13D32021EBCE000ED23E /* AppDelegate.swift */,
 				B17C13DA2021EBCE000ED23E /* Assets.xcassets */,
 				B17C13DC2021EBCE000ED23E /* LaunchScreen.storyboard */,
@@ -163,13 +218,6 @@
 			path = parqueadero_iosUITests;
 			sourceTree = "<group>";
 		};
-		B17C14022021EDC4000ED23E /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		B17C140620220B00000ED23E /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +238,7 @@
 		B17C140C20224B37000ED23E /* RegisterList */ = {
 			isa = PBXGroup;
 			children = (
+				B11EE289202363930031AF9A /* DataManager */,
 				B17C141120224B70000ED23E /* Wireframe */,
 				B17C141020224B68000ED23E /* View */,
 				B17C140F20224B60000ED23E /* Presenter */,
@@ -202,6 +251,7 @@
 		B17C140D20224B50000ED23E /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				B11EE287202361280031AF9A /* RegisterListInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -217,6 +267,7 @@
 		B17C140F20224B60000ED23E /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				B11EE28520235EC20031AF9A /* RegisterListPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -224,6 +275,7 @@
 		B17C141020224B68000ED23E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B11EE29A202390480031AF9A /* Cell */,
 				B11EE281202347480031AF9A /* RegisterListViewViewController.swift */,
 			);
 			path = View;
@@ -232,6 +284,7 @@
 		B17C141120224B70000ED23E /* Wireframe */ = {
 			isa = PBXGroup;
 			children = (
+				B11EE28D202367DC0031AF9A /* RegisterListWireframe.swift */,
 			);
 			path = Wireframe;
 			sourceTree = "<group>";
@@ -551,9 +604,16 @@
 				B11EE282202347490031AF9A /* RegisterListViewViewController.swift in Sources */,
 				B11EE28020233DED0031AF9A /* Protocols.swift in Sources */,
 				B17C141520226EAC000ED23E /* Vehiculo.swift in Sources */,
+				B11EE28E202367DC0031AF9A /* RegisterListWireframe.swift in Sources */,
+				B11EE288202361280031AF9A /* RegisterListInteractor.swift in Sources */,
+				B11EE29920237A670031AF9A /* TabTwoViewController.swift in Sources */,
+				B11EE28C2023640C0031AF9A /* RegisterListRemoteDataManager.swift in Sources */,
+				B11EE29C2023905C0031AF9A /* RegisterCell.swift in Sources */,
 				B17C140820220F04000ED23E /* Endpoints.swift in Sources */,
+				B11EE29720236D9A0031AF9A /* HomeViewController.swift in Sources */,
 				B17C13D42021EBCE000ED23E /* AppDelegate.swift in Sources */,
 				B17C141320226E07000ED23E /* Registro.swift in Sources */,
+				B11EE28620235EC20031AF9A /* RegisterListPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
