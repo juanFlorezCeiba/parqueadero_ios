@@ -33,12 +33,11 @@ class RegisterDetailPresenter: RegisterDetailPresenterProtocol {
 extension RegisterDetailPresenter: RegisterDetailInteractorOutputProtocol{
    
     func didRetrieveRegisterRate(rate: Int) {
-        view?.rate = rate
+        view?.getRegisterRate(forRate: rate)
     }
     
     func onError() {
-        view?.rate = 0
+        view?.getRegisterRate(forRate: rate!)
     }
-    
     
 }

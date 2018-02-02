@@ -16,6 +16,10 @@ protocol RegisterDetailViewProtocol: class {
     
     func showRegisterDetail(forRegister register: Registro)
     
+    func getRegisterRate(forRate rate: Int)
+    
+    func paidConfirmation(forId id: Int)
+    
 }
 protocol RegisterDetailPresenterProtocol: class {
     
@@ -29,6 +33,8 @@ protocol RegisterDetailPresenterProtocol: class {
     func viewDidLoad()
 
     func retrieveRegisterRate(forId id: Int)
+    
+    func paidConfirmation(forId id: Int)
 }
 
 protocol RegisterDetailWireframeProtocol: class {
@@ -41,6 +47,8 @@ protocol RegisterDetailInteractorInputProtocol: class {
     var remoteDataManager: RegisterDetailRemoteDataManagerInputProtocol? {get set}
         
     func retrieveRegisterRate(forId id: Int)
+    
+    func paidConfirmation(forId id: Int)
     
     
 }
@@ -56,6 +64,7 @@ protocol RegisterDetailRemoteDataManagerInputProtocol: class {
     var remoteRequestHandler: RegisterDetailRemoteDataManagerOutputProtocol? {get set}
     
     func retrieveRegisterRate(forId id: Int)
+    func paidConfirmation(forId id: Int)
 }
 
 

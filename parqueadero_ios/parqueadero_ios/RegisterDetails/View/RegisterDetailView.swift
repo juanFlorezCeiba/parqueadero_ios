@@ -38,14 +38,19 @@ class RegisterDetailView: UIViewController {
         
         presenter?.retrieveRegisterRate(forId: (self.register?.id)!)
         
-        print("La tarifa es: \(self.rate)")
     }
     
     
     
 }
 
-extension RegisterDetailView: RegisterDetailViewProtocol{ 
+extension RegisterDetailView: RegisterDetailViewProtocol{
+    
+    func getRegisterRate(forRate rate: Int) {
+        self.rate = rate
+        print("La tarifa realmente es: \(self.rate)")
+    }
+    
     
     func showRegisterDetail(forRegister register: Registro) {
         

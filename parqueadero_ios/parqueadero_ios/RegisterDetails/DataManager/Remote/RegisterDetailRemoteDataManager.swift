@@ -19,7 +19,7 @@ class RegisterDetailRemoteDataManager: RegisterDetailRemoteDataManagerInputProto
             .validate()
             .responseJSON { (response) in
                 
-                print(response.result.value)
+                //print(response.result.value)
                 self.remoteRequestHandler?.onRetrievedRegisterRate(rate: 1)
         }
 
