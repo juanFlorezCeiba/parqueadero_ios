@@ -10,10 +10,7 @@ import Foundation
 
 class RegisterDetailPresenter: RegisterDetailPresenterProtocol {
    
-
-    
-    var view: RegisterDetailViewProtocol?
-    
+    weak var view: RegisterDetailViewProtocol?
     var wireframe: RegisterDetailWireframeProtocol?
     var interactor: RegisterDetailInteractorInputProtocol?
     
@@ -31,6 +28,7 @@ class RegisterDetailPresenter: RegisterDetailPresenterProtocol {
         interactor?.retrieveRegisterRate(forId: id)
     }
 }
+
 
 extension RegisterDetailPresenter: RegisterDetailInteractorOutputProtocol{
    

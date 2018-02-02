@@ -37,7 +37,11 @@ class RegisterDetailView: UIViewController {
     @IBAction func payParking(_ sender: UIButton) {
         
         presenter?.retrieveRegisterRate(forId: (self.register?.id)!)
+        
+        print("La tarifa es: \(self.rate)")
     }
+    
+    
     
 }
 

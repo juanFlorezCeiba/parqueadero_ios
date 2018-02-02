@@ -37,7 +37,7 @@ protocol RegisterDetailWireframeProtocol: class {
 
 protocol RegisterDetailInteractorInputProtocol: class {
     
-    var presenter: RegisterDetailPresenterProtocol? {get set}
+    var presenter: RegisterDetailInteractorOutputProtocol? {get set}
     var remoteDataManager: RegisterDetailRemoteDataManagerInputProtocol? {get set}
         
     func retrieveRegisterRate(forId id: Int)

@@ -20,6 +20,7 @@ class RegisterDetailRemoteDataManager: RegisterDetailRemoteDataManagerInputProto
             .responseJSON { (response) in
                 
                 print(response.result.value)
+                self.remoteRequestHandler?.onRetrievedRegisterRate(rate: 1)
         }
 
     }

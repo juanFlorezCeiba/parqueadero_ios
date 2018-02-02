@@ -21,13 +21,21 @@ class RegisterDetailWireframe: RegisterDetailWireframeProtocol {
         
         if let view = viewController as? RegisterDetailView {
             
-            let presenter: RegisterDetailPresenterProtocol = RegisterDetailPresenter()
+            let presenter: RegisterDetailPresenterProtocol & RegisterDetailInteractorOutputProtocol = RegisterDetailPresenter()
+            let interactor: RegisterDetailInteractorInputProtocol & RegisterDetailRemoteDataManagerOutputProtocol = RegisterDetailInteractor()
+            let remoteDataManager: RegisterDetailRemoteDataManagerInputProtocol = RegisterDetailRemoteDataManager()
+
             let wireframe: RegisterDetailWireframeProtocol = RegisterDetailWireframe()
             
             view.presenter = presenter
             presenter.view = view
             presenter.wireframe = wireframe
+            presenter.interactor = interactor
             presenter.register = register
+            interactor.presenter = presenter
+            interactor.remoteDataManager = remoteDataManager
+            remoteDataManager.remoteRequestHandler = interactor
+            
             
             return viewController
         }

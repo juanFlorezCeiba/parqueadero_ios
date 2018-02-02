@@ -14,6 +14,7 @@
 		B11A9FF72024B8B4005EE343 /* RegisterDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11A9FF62024B8B4005EE343 /* RegisterDetailPresenter.swift */; };
 		B11A9FF92024BAC6005EE343 /* RegisterDetailWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11A9FF82024BAC6005EE343 /* RegisterDetailWireframe.swift */; };
 		B11A9FFE2024E84F005EE343 /* RegisterDetailRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11A9FFD2024E84F005EE343 /* RegisterDetailRemoteDataManager.swift */; };
+		B11AA0002024F7F9005EE343 /* RegisterDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11A9FFF2024F7F9005EE343 /* RegisterDetailInteractor.swift */; };
 		B11EE28020233DED0031AF9A /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11EE27F20233DED0031AF9A /* Protocols.swift */; };
 		B11EE282202347490031AF9A /* RegisterListViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11EE281202347480031AF9A /* RegisterListViewViewController.swift */; };
 		B11EE284202347B10031AF9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B11EE283202347B10031AF9A /* Main.storyboard */; };
@@ -63,6 +64,7 @@
 		B11A9FF62024B8B4005EE343 /* RegisterDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDetailPresenter.swift; sourceTree = "<group>"; };
 		B11A9FF82024BAC6005EE343 /* RegisterDetailWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDetailWireframe.swift; sourceTree = "<group>"; };
 		B11A9FFD2024E84F005EE343 /* RegisterDetailRemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDetailRemoteDataManager.swift; sourceTree = "<group>"; };
+		B11A9FFF2024F7F9005EE343 /* RegisterDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDetailInteractor.swift; sourceTree = "<group>"; };
 		B11EE27F20233DED0031AF9A /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		B11EE281202347480031AF9A /* RegisterListViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterListViewViewController.swift; sourceTree = "<group>"; };
 		B11EE283202347B10031AF9A /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 		B11A9FFA2024E80F005EE343 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				B11A9FFF2024F7F9005EE343 /* RegisterDetailInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -687,6 +690,7 @@
 				B17C141520226EAC000ED23E /* Vehiculo.swift in Sources */,
 				B11EE28E202367DC0031AF9A /* RegisterListWireframe.swift in Sources */,
 				B11EE288202361280031AF9A /* RegisterListInteractor.swift in Sources */,
+				B11AA0002024F7F9005EE343 /* RegisterDetailInteractor.swift in Sources */,
 				B11A9FF92024BAC6005EE343 /* RegisterDetailWireframe.swift in Sources */,
 				B11EE29920237A670031AF9A /* TabTwoViewController.swift in Sources */,
 				B11A9FFE2024E84F005EE343 /* RegisterDetailRemoteDataManager.swift in Sources */,
