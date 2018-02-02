@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		40CF8A46B72822C846648DC1 /* Pods_parqueadero_iosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2759E6C58E78DCBA389374B7 /* Pods_parqueadero_iosUITests.framework */; };
 		6EA15AFE8150B31D4CA65D31 /* Pods_parqueadero_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9B378FC559D0E51C6DC8F8 /* Pods_parqueadero_iosTests.framework */; };
+		B11A9FF12024A450005EE343 /* RegisterDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11A9FF02024A450005EE343 /* RegisterDetailProtocols.swift */; };
+		B11A9FF52024A76C005EE343 /* RegisterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11A9FF42024A76C005EE343 /* RegisterDetailView.swift */; };
+		B11A9FF72024B8B4005EE343 /* RegisterDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11A9FF62024B8B4005EE343 /* RegisterDetailPresenter.swift */; };
+		B11A9FF92024BAC6005EE343 /* RegisterDetailWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11A9FF82024BAC6005EE343 /* RegisterDetailWireframe.swift */; };
 		B11EE28020233DED0031AF9A /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11EE27F20233DED0031AF9A /* Protocols.swift */; };
 		B11EE282202347490031AF9A /* RegisterListViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11EE281202347480031AF9A /* RegisterListViewViewController.swift */; };
 		B11EE284202347B10031AF9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B11EE283202347B10031AF9A /* Main.storyboard */; };
@@ -53,6 +57,10 @@
 		87BD14BFFD1E4F62FAA67E7F /* Pods_parqueadero_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_parqueadero_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A27298C03C201125E2B8BE72 /* Pods-parqueadero_iosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-parqueadero_iosUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-parqueadero_iosUITests/Pods-parqueadero_iosUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A66C788E57E2AB0E8037D66E /* Pods-parqueadero_iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-parqueadero_iosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-parqueadero_iosTests/Pods-parqueadero_iosTests.release.xcconfig"; sourceTree = "<group>"; };
+		B11A9FF02024A450005EE343 /* RegisterDetailProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDetailProtocols.swift; sourceTree = "<group>"; };
+		B11A9FF42024A76C005EE343 /* RegisterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDetailView.swift; sourceTree = "<group>"; };
+		B11A9FF62024B8B4005EE343 /* RegisterDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDetailPresenter.swift; sourceTree = "<group>"; };
+		B11A9FF82024BAC6005EE343 /* RegisterDetailWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDetailWireframe.swift; sourceTree = "<group>"; };
 		B11EE27F20233DED0031AF9A /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		B11EE281202347480031AF9A /* RegisterListViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterListViewViewController.swift; sourceTree = "<group>"; };
 		B11EE283202347B10031AF9A /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -121,6 +129,49 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B11A9FEB2024A3FD005EE343 /* RegisterDetails */ = {
+			isa = PBXGroup;
+			children = (
+				B11A9FEF2024A42C005EE343 /* View */,
+				B11A9FEE2024A424005EE343 /* Wireframe */,
+				B11A9FED2024A41D005EE343 /* Protocols */,
+				B11A9FEC2024A416005EE343 /* Presenter */,
+			);
+			path = RegisterDetails;
+			sourceTree = "<group>";
+		};
+		B11A9FEC2024A416005EE343 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B11A9FF62024B8B4005EE343 /* RegisterDetailPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B11A9FED2024A41D005EE343 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				B11A9FF02024A450005EE343 /* RegisterDetailProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		B11A9FEE2024A424005EE343 /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				B11A9FF82024BAC6005EE343 /* RegisterDetailWireframe.swift */,
+			);
+			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		B11A9FEF2024A42C005EE343 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B11A9FF42024A76C005EE343 /* RegisterDetailView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		B11EE289202363930031AF9A /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +238,7 @@
 		B17C13D22021EBCE000ED23E /* parqueadero_ios */ = {
 			isa = PBXGroup;
 			children = (
+				B11A9FEB2024A3FD005EE343 /* RegisterDetails */,
 				B11EE29420236D7B0031AF9A /* Home */,
 				B17C140620220B00000ED23E /* Common */,
 				B17C140C20224B37000ED23E /* RegisterList */,
@@ -601,12 +653,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B11A9FF52024A76C005EE343 /* RegisterDetailView.swift in Sources */,
 				B11EE282202347490031AF9A /* RegisterListViewViewController.swift in Sources */,
+				B11A9FF12024A450005EE343 /* RegisterDetailProtocols.swift in Sources */,
 				B11EE28020233DED0031AF9A /* Protocols.swift in Sources */,
 				B17C141520226EAC000ED23E /* Vehiculo.swift in Sources */,
 				B11EE28E202367DC0031AF9A /* RegisterListWireframe.swift in Sources */,
 				B11EE288202361280031AF9A /* RegisterListInteractor.swift in Sources */,
+				B11A9FF92024BAC6005EE343 /* RegisterDetailWireframe.swift in Sources */,
 				B11EE29920237A670031AF9A /* TabTwoViewController.swift in Sources */,
+				B11A9FF72024B8B4005EE343 /* RegisterDetailPresenter.swift in Sources */,
 				B11EE28C2023640C0031AF9A /* RegisterListRemoteDataManager.swift in Sources */,
 				B11EE29C2023905C0031AF9A /* RegisterCell.swift in Sources */,
 				B17C140820220F04000ED23E /* Endpoints.swift in Sources */,

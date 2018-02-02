@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class RegisterListWireframe: RegisterListWireframeProtocol {
-   
+
     static var storyboard: UIStoryboard {
         return UIStoryboard(name: "Main", bundle: Bundle.main)
     }
@@ -47,6 +47,12 @@ class RegisterListWireframe: RegisterListWireframeProtocol {
     
     func presenterRegisterDetailScreen(from view: RegisterListViewProtocol, forRegister register: Registro) {
         
+        let registerDetailViewController = RegisterDetailWireframe.createRegisterDetailModule(forRegister: register)
+        
+        if let sourceView = view as? UIViewController {
+            
+            sourceView.navigationController?.pushViewController(registerDetailViewController, animated: true)
+        }
     }
     
     

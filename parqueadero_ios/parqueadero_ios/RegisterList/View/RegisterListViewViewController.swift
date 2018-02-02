@@ -95,4 +95,11 @@ extension RegisterListView: UITableViewDataSource, UITableViewDelegate {
         cell.set(forRegister: register)
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let register: Registro = registerList[indexPath.row]
+        
+        presenter?.showRegisterDetail(forRegister: register)
+    }
 }

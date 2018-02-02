@@ -26,7 +26,7 @@ class RegisterListPresenter: RegisterListPresenterProtocol {
     }
     
     func showRegisterDetail(forRegister register: Registro) {
-        //TODO
+        wireframe?.presenterRegisterDetailScreen(from: view!, forRegister: register)
     }
     
 }
