@@ -19,6 +19,8 @@ class RegisterDetailView: UIViewController {
     
     
     var presenter: RegisterDetailPresenterProtocol?
+    var rate: Int?
+    var register: Registro?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +35,8 @@ class RegisterDetailView: UIViewController {
     }
     
     @IBAction func payParking(_ sender: UIButton) {
+        
+        presenter?.retrieveRegisterRate(forId: (self.register?.id)!)
     }
     
 }
@@ -40,25 +44,28 @@ class RegisterDetailView: UIViewController {
 extension RegisterDetailView: RegisterDetailViewProtocol{ 
     
     func showRegisterDetail(forRegister register: Registro) {
-        idLabel.text = "\(register.id!)"
+        
+        self.register = register
+        
+        idLabel.text = "\(self.register?.id!)"
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yy-MM-dd hh:mm"
-        let dateFechaEntrada = Date(timeIntervalSince1970: (TimeInterval(register.fechaEntrada! / 1000)))
+        let dateFechaEntrada = Date(timeIntervalSince1970: (TimeInterval((self.register?.fechaEntrada!)! / 1000)))
         let fechaEntrada = dateFormatter.string(from: dateFechaEntrada)
 
         checkInDateLabel.text = "\(fechaEntrada)"
         checkOutDateLabel.text = "Aún esta parqueado."
         
-        if register.fechaSalida != nil {
-            let dateFechaSalida = Date(timeIntervalSince1970: (TimeInterval(register.fechaSalida! / 1000)))
+        if self.register?.fechaSalida != nil {
+            let dateFechaSalida = Date(timeIntervalSince1970: (TimeInterval((self.register?.fechaSalida!)! / 1000)))
             let fechaSalida = dateFormatter.string(from: dateFechaSalida)
             
             checkOutDateLabel.text = "\(fechaSalida)"
             
         }
-        registrationNumberLabel.text = register.vehiculo?.placa
-        displacementLabel.text = "\((register.vehiculo?.cilindraje)!)"
+        registrationNumberLabel.text = self.register?.vehiculo?.placa
+        displacementLabel.text = "\((self.register?.vehiculo?.cilindraje)!)"
         
         
     }

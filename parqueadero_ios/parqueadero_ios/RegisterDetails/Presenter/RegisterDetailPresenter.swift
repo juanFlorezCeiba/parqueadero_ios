@@ -9,14 +9,38 @@
 import Foundation
 
 class RegisterDetailPresenter: RegisterDetailPresenterProtocol {
+   
+
+    
     var view: RegisterDetailViewProtocol?
     
     var wireframe: RegisterDetailWireframeProtocol?
+    var interactor: RegisterDetailInteractorInputProtocol?
     
     var register: Registro?
+    
+     var rate: Int?
+    
     
     func viewDidLoad() {
         view?.showRegisterDetail(forRegister: register!)
     }
 
+    
+    func retrieveRegisterRate(forId id: Int) {
+        interactor?.retrieveRegisterRate(forId: id)
+    }
+}
+
+extension RegisterDetailPresenter: RegisterDetailInteractorOutputProtocol{
+   
+    func didRetrieveRegisterRate(rate: Int) {
+        view?.rate = rate
+    }
+    
+    func onError() {
+        view?.rate = 0
+    }
+    
+    
 }

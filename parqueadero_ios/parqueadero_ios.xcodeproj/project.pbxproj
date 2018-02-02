@@ -13,6 +13,7 @@
 		B11A9FF52024A76C005EE343 /* RegisterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11A9FF42024A76C005EE343 /* RegisterDetailView.swift */; };
 		B11A9FF72024B8B4005EE343 /* RegisterDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11A9FF62024B8B4005EE343 /* RegisterDetailPresenter.swift */; };
 		B11A9FF92024BAC6005EE343 /* RegisterDetailWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11A9FF82024BAC6005EE343 /* RegisterDetailWireframe.swift */; };
+		B11A9FFE2024E84F005EE343 /* RegisterDetailRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11A9FFD2024E84F005EE343 /* RegisterDetailRemoteDataManager.swift */; };
 		B11EE28020233DED0031AF9A /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11EE27F20233DED0031AF9A /* Protocols.swift */; };
 		B11EE282202347490031AF9A /* RegisterListViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11EE281202347480031AF9A /* RegisterListViewViewController.swift */; };
 		B11EE284202347B10031AF9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B11EE283202347B10031AF9A /* Main.storyboard */; };
@@ -61,6 +62,7 @@
 		B11A9FF42024A76C005EE343 /* RegisterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDetailView.swift; sourceTree = "<group>"; };
 		B11A9FF62024B8B4005EE343 /* RegisterDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDetailPresenter.swift; sourceTree = "<group>"; };
 		B11A9FF82024BAC6005EE343 /* RegisterDetailWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDetailWireframe.swift; sourceTree = "<group>"; };
+		B11A9FFD2024E84F005EE343 /* RegisterDetailRemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDetailRemoteDataManager.swift; sourceTree = "<group>"; };
 		B11EE27F20233DED0031AF9A /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		B11EE281202347480031AF9A /* RegisterListViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterListViewViewController.swift; sourceTree = "<group>"; };
 		B11EE283202347B10031AF9A /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -132,6 +134,8 @@
 		B11A9FEB2024A3FD005EE343 /* RegisterDetails */ = {
 			isa = PBXGroup;
 			children = (
+				B11A9FFB2024E81D005EE343 /* DataManager */,
+				B11A9FFA2024E80F005EE343 /* Interactor */,
 				B11A9FEF2024A42C005EE343 /* View */,
 				B11A9FEE2024A424005EE343 /* Wireframe */,
 				B11A9FED2024A41D005EE343 /* Protocols */,
@@ -170,6 +174,29 @@
 				B11A9FF42024A76C005EE343 /* RegisterDetailView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		B11A9FFA2024E80F005EE343 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		B11A9FFB2024E81D005EE343 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				B11A9FFC2024E829005EE343 /* Remote */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		B11A9FFC2024E829005EE343 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				B11A9FFD2024E84F005EE343 /* RegisterDetailRemoteDataManager.swift */,
+			);
+			path = Remote;
 			sourceTree = "<group>";
 		};
 		B11EE289202363930031AF9A /* DataManager */ = {
@@ -662,6 +689,7 @@
 				B11EE288202361280031AF9A /* RegisterListInteractor.swift in Sources */,
 				B11A9FF92024BAC6005EE343 /* RegisterDetailWireframe.swift in Sources */,
 				B11EE29920237A670031AF9A /* TabTwoViewController.swift in Sources */,
+				B11A9FFE2024E84F005EE343 /* RegisterDetailRemoteDataManager.swift in Sources */,
 				B11A9FF72024B8B4005EE343 /* RegisterDetailPresenter.swift in Sources */,
 				B11EE28C2023640C0031AF9A /* RegisterListRemoteDataManager.swift in Sources */,
 				B11EE29C2023905C0031AF9A /* RegisterCell.swift in Sources */,
