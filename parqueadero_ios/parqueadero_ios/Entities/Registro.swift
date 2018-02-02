@@ -11,8 +11,8 @@ import ObjectMapper
 
 struct Registro {
     var id: Int?
-    var fechaEntrada: Date?
-    var fechaSalida: Date?
+    var fechaEntrada: Int?
+    var fechaSalida: Int? = 0
     var vehiculo: Vehiculo?
 
 }
@@ -25,8 +25,9 @@ extension Registro: Mappable {
     
     mutating func mapping(map: Map) {
         id <-   map["id"]
-        fechaEntrada <- (map["fechaEntrada"], DateTransform())
-        fechaSalida <-  (map["fechaSalida"], DateTransform())
+        fechaEntrada <- (map["fechaEntrada"])
+        fechaSalida <-  (map["fechaSalida"])
         vehiculo <-     map["vehiculo"]
+        
     }
 }

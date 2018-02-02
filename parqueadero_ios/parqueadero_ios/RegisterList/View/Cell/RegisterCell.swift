@@ -19,8 +19,22 @@ class RegisterCell: UITableViewCell {
     func set(forRegister register: Registro) {
         self.selectionStyle = .none
         idLabel.text = "\(String(describing: register.id!))"
-        checkInDateLabel.text = "\(register.fechaEntrada!)"
-        checkOutDateLabel.text = "\(register.fechaSalida)"
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yy-MM-dd hh:mm"
+        let dateFechaEntrada = Date(timeIntervalSince1970: (TimeInterval(register.fechaEntrada! / 1000)))
+        
+        let fechaEntrada = dateFormatter.string(from: dateFechaEntrada)
+        
+        checkInDateLabel.text = "\(fechaEntrada)"
+        
+        if register.fechaSalida != nil {
+            let dateFechaSalida = Date(timeIntervalSince1970: (TimeInterval(register.fechaSalida! / 1000)))
+            let fechaSalida = dateFormatter.string(from: dateFechaSalida)
+            checkOutDateLabel.text = "\(fechaSalida)"
+        } else {
+            checkOutDateLabel.text = "Aún esta parqueado."
+        }
         registrationNumberLabel.text = register.vehiculo?.placa
         
     }
