@@ -8,12 +8,12 @@
 
 import UIKit
 
-class TabTwoViewController: UIViewController {
+class TabCarViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.backgroundColor = UIColor.red
+        self.view.backgroundColor = UIColor.gray
         self.title = "Tab 2"
         
         

@@ -19,10 +19,22 @@ class RegisterListView: UIViewController {
     
     //Other variables
     var registerList: [Registro] = []
+  
+    //SearchController
+    let searchController = UISearchController(searchResultsController: nil)
     
-    
+    var filteredRegisters = [Registro]()
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Setup the Search Controller
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Escriba la placa"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
         
         //Solicita al presentador que cargue la vista.
         presenter?.viewDidLoad()
@@ -40,6 +52,29 @@ class RegisterListView: UIViewController {
     }
     
 
+    
+    //MARK: - UISearch Methods
+    
+    // MARK: - Private instance methods
+    
+    func searchBarIsEmpty() -> Bool {
+        // Returns true if the text is empty or nil
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
+    
+    func filterContentForSearchText(_ searchText: String, scope: String = "All") {
+        filteredRegisters = registerList.filter({( register : Registro) -> Bool in
+            return (register.vehiculo?.placa?.lowercased().contains(searchText.lowercased()))!
+           // return candy.name.lowercased().contains(searchText.lowercased())
+        })
+        
+        registerTableView.reloadData()
+    }
+    
+    
+    func isFiltering() -> Bool {
+        return searchController.isActive && !searchBarIsEmpty()
+    }
     /*
     // MARK: - Navigation
 
@@ -88,13 +123,23 @@ extension RegisterListView: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+       
+        if isFiltering() {
+            return filteredRegisters.count
+        }
         return self.registerList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = registerTableView.dequeueReusableCell(withIdentifier: "RegisterCell", for: indexPath) as! RegisterCell
         
-        let register = registerList[indexPath.row]
+        var register: Registro
+        if isFiltering() {
+            register = filteredRegisters[indexPath.row]
+        } else {
+            register = registerList[indexPath.row]
+
+        }
         
         cell.set(forRegister: register)
         return cell
@@ -102,8 +147,22 @@ extension RegisterListView: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let register: Registro = registerList[indexPath.row]
+        var register: Registro
+            
+        if isFiltering() {
+            register = filteredRegisters[indexPath.row]
+        } else {
+            register = registerList[indexPath.row]
+        }
         
         presenter?.showRegisterDetail(forRegister: register)
     }
 }
+
+extension RegisterListView: UISearchResultsUpdating {
+    // MARK: - UISearchResultsUpdating Delegate
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearchText(searchController.searchBar.text!)
+    }
+}
+

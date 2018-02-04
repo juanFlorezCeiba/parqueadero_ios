@@ -20,15 +20,25 @@ class HomeViewController: UITabBarController, UITabBarControllerDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        //Se inicializa la view.
         let tabRegister = RegisterListWireframe.createRegisterListModule()
         let tabRegisterItem = UITabBarItem(title: "Registros", image: #imageLiteral(resourceName: "document"), selectedImage: nil)
         tabRegister.tabBarItem = tabRegisterItem
         
-        let tabTwo = TabTwoViewController()
+        let tabCar = TabCarViewController()
         
-        let tabTwoBarItem2 = UITabBarItem(title: "Tab 2", image: #imageLiteral(resourceName: "car"), selectedImage: nil)
-        tabTwo.tabBarItem = tabTwoBarItem2
-        self.viewControllers = [tabTwo, tabRegister]
+        let tabCarBarItem = UITabBarItem(title: "Carros", image: #imageLiteral(resourceName: "car"), selectedImage: nil)
+        
+        tabCar.tabBarItem = tabCarBarItem
+       
+        
+        let tabBike = TabBikeViewController()
+        
+        let tabBikeBarItem = UITabBarItem(title: "Motos", image: #imageLiteral(resourceName: "motorbike"), selectedImage: nil)
+        tabBike.tabBarItem = tabBikeBarItem
+    
+        self.viewControllers = [tabRegister, tabCar, tabBike]
+
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
