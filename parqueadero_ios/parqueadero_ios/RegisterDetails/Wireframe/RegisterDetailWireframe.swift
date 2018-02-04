@@ -9,7 +9,9 @@
 import Foundation
 import UIKit
 
-class RegisterDetailWireframe: RegisterDetailWireframeProtocol { 
+class RegisterDetailWireframe: RegisterDetailWireframeProtocol {
+
+    
    
     static var mainStoryboard: UIStoryboard {
         return UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -41,6 +43,16 @@ class RegisterDetailWireframe: RegisterDetailWireframeProtocol {
         }
         
         return UIViewController()
+    }
+    
+    
+    func comeBackView(from view: RegisterDetailViewProtocol) {
+        
+
+        if let sourceView = view as? UIViewController {
+            
+            sourceView.navigationController?.popViewController(animated: true)
+        }
     }
     
 }

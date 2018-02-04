@@ -10,6 +10,7 @@ import Foundation
 
 class RegisterDetailInteractor: RegisterDetailInteractorInputProtocol {
     
+    
     weak var presenter: RegisterDetailInteractorOutputProtocol?
     
     var remoteDataManager: RegisterDetailRemoteDataManagerInputProtocol?
@@ -18,16 +19,25 @@ class RegisterDetailInteractor: RegisterDetailInteractorInputProtocol {
         remoteDataManager?.retrieveRegisterRate(forId: id)
     }
     
-    
+    func paidConfirmation(forId id: Int) {
+        remoteDataManager?.paidConfirmation(forId: id)
+    }
 }
 
 extension RegisterDetailInteractor: RegisterDetailRemoteDataManagerOutputProtocol{
+ 
+    
     func onRetrievedRegisterRate(rate: Int) {
         
         presenter?.didRetrieveRegisterRate(rate: rate)
     }
     
+    func comeBackView() {
+        presenter?.comeBackView()
+    }
     
-    
-    
+    func onErrorPaying() {
+        presenter?.onErrorPaying()
+    }
 }
+

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 
 class RegisterDetailView: UIViewController {
 
@@ -45,11 +46,7 @@ class RegisterDetailView: UIViewController {
 }
 
 extension RegisterDetailView: RegisterDetailViewProtocol{
-    
-    func getRegisterRate(forRate rate: Int) {
-        self.rate = rate
-        print("La tarifa realmente es: \(self.rate)")
-    }
+
     
     
     func showRegisterDetail(forRegister register: Registro) {
@@ -79,5 +76,38 @@ extension RegisterDetailView: RegisterDetailViewProtocol{
         
     }
     
+    func paidConfirmation(forId id: Int) {
+
+        presenter?.paidConfirmation(forId: id)
+    }
     
+    
+    func getRegisterRate(forRate rate: Int) {
+        // self.rate = rate
+        
+        let alert = UIAlertController(title: "Pagar", message: "El total a pagar es: $\(rate) COP", preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
+        let acceptAction = UIAlertAction(title: "Aceptar", style: .default) { (alert) in
+            
+            self.paidConfirmation(forId: (self.register?.id!)!)
+        }
+        
+        
+        alert.addAction(cancelAction)
+        alert.addAction(acceptAction)
+        
+        present(alert, animated: true, completion: nil)
+    }
+
+    func dismiss() {
+        
+        print("LLWFO A LA VISTA")
+       // self.dismiss(animated: true, completion: nil)
+    }
+    
+    func onErrorPaying() {
+        HUD.flash(.label("Hubo un problema, no se realizo el pago."), delay: 3.0)
+    }
+
 }

@@ -30,6 +30,7 @@ class RegisterListRemoteDataManager: RegisterListRemoteDataManagerInputProtocol 
                     self.remoteRequestHandler?.onRegistersRetrieved(registers)
                 case .failure(_):
                     print(response.result)
+                    self.remoteRequestHandler?.onError()
                 }
         }
 

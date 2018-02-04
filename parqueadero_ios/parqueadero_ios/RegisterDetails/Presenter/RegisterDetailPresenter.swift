@@ -9,6 +9,11 @@
 import Foundation
 
 class RegisterDetailPresenter: RegisterDetailPresenterProtocol {
+    
+    func paidConfirmation(forId id: Int) {
+        interactor?.paidConfirmation(forId: id)
+    }
+    
    
     weak var view: RegisterDetailViewProtocol?
     var wireframe: RegisterDetailWireframeProtocol?
@@ -31,6 +36,7 @@ class RegisterDetailPresenter: RegisterDetailPresenterProtocol {
 
 
 extension RegisterDetailPresenter: RegisterDetailInteractorOutputProtocol{
+ 
    
     func didRetrieveRegisterRate(rate: Int) {
         view?.getRegisterRate(forRate: rate)
@@ -38,6 +44,15 @@ extension RegisterDetailPresenter: RegisterDetailInteractorOutputProtocol{
     
     func onError() {
         view?.getRegisterRate(forRate: rate!)
+    }
+    
+    func comeBackView() {
+        wireframe?.comeBackView(from: view!)
+    }
+    
+    func onErrorPaying() {
+
+        view?.onErrorPaying()
     }
     
 }

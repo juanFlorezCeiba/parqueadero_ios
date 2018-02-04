@@ -20,6 +20,10 @@ protocol RegisterDetailViewProtocol: class {
     
     func paidConfirmation(forId id: Int)
     
+    func dismiss()
+    
+    func onErrorPaying()
+    
 }
 protocol RegisterDetailPresenterProtocol: class {
     
@@ -35,10 +39,13 @@ protocol RegisterDetailPresenterProtocol: class {
     func retrieveRegisterRate(forId id: Int)
     
     func paidConfirmation(forId id: Int)
+        
 }
 
 protocol RegisterDetailWireframeProtocol: class {
     static func createRegisterDetailModule(forRegister register: Registro) -> UIViewController
+    
+    func comeBackView(from view: RegisterDetailViewProtocol)
 }
 
 protocol RegisterDetailInteractorInputProtocol: class {
@@ -50,13 +57,15 @@ protocol RegisterDetailInteractorInputProtocol: class {
     
     func paidConfirmation(forId id: Int)
     
-    
 }
 
 protocol RegisterDetailInteractorOutputProtocol: class {
     
     func didRetrieveRegisterRate(rate: Int)
     func onError()
+    
+    func comeBackView()
+    func onErrorPaying()
 }
 
 protocol RegisterDetailRemoteDataManagerInputProtocol: class {
@@ -71,4 +80,6 @@ protocol RegisterDetailRemoteDataManagerInputProtocol: class {
 protocol RegisterDetailRemoteDataManagerOutputProtocol: class {
     
     func onRetrievedRegisterRate(rate: Int)
+    func comeBackView()
+    func onErrorPaying()
 }

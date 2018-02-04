@@ -29,6 +29,7 @@ enum Endpoints {
         case consultarCarro
         case obtenerTodosVehiculos
         case obtenerTotalTarifa
+        case pagarTarifa
         
         //No se utiliza por la estructura de la API.
         public var path: String {
@@ -42,6 +43,7 @@ enum Endpoints {
             case .consultarCarro: return "vigilante/carro/consultar"
             case .obtenerTodosVehiculos: return "vigilante/obtener"
             case .obtenerTotalTarifa: return "vigilante/obtener-total"
+            case .pagarTarifa: return "vigilante/pagar"
                 
             }
         }
@@ -57,6 +59,7 @@ enum Endpoints {
             case .consultarCarro: return "\(API.baseUrl)\(path)/"
             case .obtenerTodosVehiculos: return "\(API.baseUrl)\(path)"
             case .obtenerTotalTarifa: return "\(API.baseUrl)\(path)"
+            case .pagarTarifa: return "\(API.baseUrl)\(path)"
             }
         }
     }
