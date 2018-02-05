@@ -9,6 +9,8 @@
 import Foundation
 
 class RegisterListPresenter: RegisterListPresenterProtocol {
+   
+    
     
     weak var view: RegisterListViewProtocol?
     
@@ -29,6 +31,9 @@ class RegisterListPresenter: RegisterListPresenterProtocol {
         wireframe?.presenterRegisterDetailScreen(from: view!, forRegister: register)
     }
     
+    func addRegister() {
+        wireframe?.presenterRegisterCreateScreen(from: view!)
+    }
 }
 
 extension RegisterListPresenter: RegisterListInteractorOutputProtocol{

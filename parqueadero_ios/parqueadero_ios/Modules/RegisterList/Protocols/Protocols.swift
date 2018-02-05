@@ -33,6 +33,7 @@ protocol RegisterListPresenterProtocol: class {
     //VIEW -> PRESENTER
     func viewDidLoad()
     func showRegisterDetail(forRegister register: Registro)
+    func addRegister()
     
 }
 
@@ -60,6 +61,8 @@ protocol RegisterListWireframeProtocol: class {
     
     //PRESENTER -> WIREFRAME
     func presenterRegisterDetailScreen(from view: RegisterListViewProtocol, forRegister register: Registro)
+    
+    func presenterRegisterCreateScreen(from view: RegisterListViewProtocol)
     
 }
 

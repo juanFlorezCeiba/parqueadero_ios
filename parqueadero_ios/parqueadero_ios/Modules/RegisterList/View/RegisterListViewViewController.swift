@@ -75,6 +75,13 @@ class RegisterListView: UIViewController {
     func isFiltering() -> Bool {
         return searchController.isActive && !searchBarIsEmpty()
     }
+    
+    
+    @IBAction func addButton(_ sender: UIBarButtonItem) {
+        presenter?.addRegister()
+    }
+    
+    
     /*
     // MARK: - Navigation
 

@@ -31,6 +31,7 @@ enum Endpoints {
         case obtenerTotalTarifa
         case pagarTarifa
         
+        
         //No se utiliza por la estructura de la API.
         public var path: String {
             switch self {

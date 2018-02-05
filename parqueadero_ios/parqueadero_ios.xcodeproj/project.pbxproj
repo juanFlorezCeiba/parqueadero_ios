@@ -34,6 +34,12 @@
 		B17C140820220F04000ED23E /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17C140720220F04000ED23E /* Endpoints.swift */; };
 		B17C141320226E07000ED23E /* Registro.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17C141220226E07000ED23E /* Registro.swift */; };
 		B17C141520226EAC000ED23E /* Vehiculo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17C141420226EAC000ED23E /* Vehiculo.swift */; };
+		B1A99B5C2027FA9200BC9A7D /* RegisterCreateProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A99B5B2027FA9200BC9A7D /* RegisterCreateProtocols.swift */; };
+		B1A99B5F2027FE3D00BC9A7D /* RegisterCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A99B5E2027FE3D00BC9A7D /* RegisterCreateView.swift */; };
+		B1A99B61202800CD00BC9A7D /* RegisterCreatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A99B60202800CD00BC9A7D /* RegisterCreatePresenter.swift */; };
+		B1A99B632028018200BC9A7D /* RegisterCreateInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A99B622028018200BC9A7D /* RegisterCreateInteractor.swift */; };
+		B1A99B652028020600BC9A7D /* RegisterCreateRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A99B642028020600BC9A7D /* RegisterCreateRemoteDataManager.swift */; };
+		B1A99B672028080900BC9A7D /* RegisterCreateWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A99B662028080900BC9A7D /* RegisterCreateWireframe.swift */; };
 		E48034E5B1E36FC1266D3AD4 /* Pods_parqueadero_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87BD14BFFD1E4F62FAA67E7F /* Pods_parqueadero_ios.framework */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +97,12 @@
 		B17C140720220F04000ED23E /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		B17C141220226E07000ED23E /* Registro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registro.swift; sourceTree = "<group>"; };
 		B17C141420226EAC000ED23E /* Vehiculo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehiculo.swift; sourceTree = "<group>"; };
+		B1A99B5B2027FA9200BC9A7D /* RegisterCreateProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCreateProtocols.swift; sourceTree = "<group>"; };
+		B1A99B5E2027FE3D00BC9A7D /* RegisterCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCreateView.swift; sourceTree = "<group>"; };
+		B1A99B60202800CD00BC9A7D /* RegisterCreatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCreatePresenter.swift; sourceTree = "<group>"; };
+		B1A99B622028018200BC9A7D /* RegisterCreateInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCreateInteractor.swift; sourceTree = "<group>"; };
+		B1A99B642028020600BC9A7D /* RegisterCreateRemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCreateRemoteDataManager.swift; sourceTree = "<group>"; };
+		B1A99B662028080900BC9A7D /* RegisterCreateWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCreateWireframe.swift; sourceTree = "<group>"; };
 		CE9B378FC559D0E51C6DC8F8 /* Pods_parqueadero_iosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_parqueadero_iosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D096D8BC734562A725C6A4A7 /* Pods-parqueadero_iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-parqueadero_iosTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-parqueadero_iosTests/Pods-parqueadero_iosTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DA6618F1D32D018BC38FA54C /* Pods-parqueadero_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-parqueadero_ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-parqueadero_ios/Pods-parqueadero_ios.debug.xcconfig"; sourceTree = "<group>"; };
@@ -271,8 +283,7 @@
 		B17C13D22021EBCE000ED23E /* parqueadero_ios */ = {
 			isa = PBXGroup;
 			children = (
-				B17C140C20224B37000ED23E /* RegisterList */,
-				B11A9FEB2024A3FD005EE343 /* RegisterDetails */,
+				B1A99B5D2027FACC00BC9A7D /* Modules */,
 				B11EE29420236D7B0031AF9A /* Home */,
 				B17C140620220B00000ED23E /* Common */,
 				B17C140B20224B2E000ED23E /* Entities */,
@@ -372,6 +383,85 @@
 				B11EE28D202367DC0031AF9A /* RegisterListWireframe.swift */,
 			);
 			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		B1A99B532027F9FC00BC9A7D /* RegisterCreate */ = {
+			isa = PBXGroup;
+			children = (
+				B1A99B552027FA1A00BC9A7D /* View */,
+				B1A99B562027FA2C00BC9A7D /* Presenter */,
+				B1A99B572027FA3200BC9A7D /* Interactor */,
+				B1A99B592027FA4600BC9A7D /* DataManager */,
+				B1A99B582027FA3800BC9A7D /* Wireframe */,
+				B1A99B542027FA0F00BC9A7D /* Protocols */,
+			);
+			path = RegisterCreate;
+			sourceTree = "<group>";
+		};
+		B1A99B542027FA0F00BC9A7D /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				B1A99B5B2027FA9200BC9A7D /* RegisterCreateProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		B1A99B552027FA1A00BC9A7D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B1A99B5E2027FE3D00BC9A7D /* RegisterCreateView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B1A99B562027FA2C00BC9A7D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B1A99B60202800CD00BC9A7D /* RegisterCreatePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B1A99B572027FA3200BC9A7D /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				B1A99B622028018200BC9A7D /* RegisterCreateInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		B1A99B582027FA3800BC9A7D /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				B1A99B662028080900BC9A7D /* RegisterCreateWireframe.swift */,
+			);
+			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		B1A99B592027FA4600BC9A7D /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				B1A99B5A2027FA4D00BC9A7D /* Remote */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		B1A99B5A2027FA4D00BC9A7D /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				B1A99B642028020600BC9A7D /* RegisterCreateRemoteDataManager.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		B1A99B5D2027FACC00BC9A7D /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				B11A9FEB2024A3FD005EE343 /* RegisterDetails */,
+				B17C140C20224B37000ED23E /* RegisterList */,
+				B1A99B532027F9FC00BC9A7D /* RegisterCreate */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 		EE81F07C0A26A866826BDC54 /* Pods */ = {
@@ -696,8 +786,12 @@
 				B11AA0002024F7F9005EE343 /* RegisterDetailInteractor.swift in Sources */,
 				B11A9FF92024BAC6005EE343 /* RegisterDetailWireframe.swift in Sources */,
 				B11EE29920237A670031AF9A /* TabCarViewController.swift in Sources */,
+				B1A99B5C2027FA9200BC9A7D /* RegisterCreateProtocols.swift in Sources */,
 				B11A9FFE2024E84F005EE343 /* RegisterDetailRemoteDataManager.swift in Sources */,
 				B10DCDF02026BF4800B144D9 /* TabBikeViewController.swift in Sources */,
+				B1A99B632028018200BC9A7D /* RegisterCreateInteractor.swift in Sources */,
+				B1A99B5F2027FE3D00BC9A7D /* RegisterCreateView.swift in Sources */,
+				B1A99B61202800CD00BC9A7D /* RegisterCreatePresenter.swift in Sources */,
 				B11A9FF72024B8B4005EE343 /* RegisterDetailPresenter.swift in Sources */,
 				B11EE28C2023640C0031AF9A /* RegisterListRemoteDataManager.swift in Sources */,
 				B11EE29C2023905C0031AF9A /* RegisterCell.swift in Sources */,
@@ -706,6 +800,8 @@
 				B17C13D42021EBCE000ED23E /* AppDelegate.swift in Sources */,
 				B17C141320226E07000ED23E /* Registro.swift in Sources */,
 				B11EE28620235EC20031AF9A /* RegisterListPresenter.swift in Sources */,
+				B1A99B652028020600BC9A7D /* RegisterCreateRemoteDataManager.swift in Sources */,
+				B1A99B672028080900BC9A7D /* RegisterCreateWireframe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

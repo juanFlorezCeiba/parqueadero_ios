@@ -56,4 +56,15 @@ class RegisterListWireframe: RegisterListWireframeProtocol {
     }
     
     
+    func presenterRegisterCreateScreen(from view: RegisterListViewProtocol) {
+        
+        let registerCreateViewController = RegisterCreateWireframe.createRegisterCreateModule()
+        
+        if let sourceView = view as? UIViewController {
+            
+            sourceView.navigationController?.pushViewController(registerCreateViewController, animated: true)
+        }
+    }
+    
+    
 }
