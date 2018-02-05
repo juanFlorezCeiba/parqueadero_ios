@@ -17,6 +17,9 @@ class RegisterDetailWireframe: RegisterDetailWireframeProtocol {
         return UIStoryboard(name: "Main", bundle: Bundle.main)
     }
     
+    /*
+     Función que crea los modulos en la vista de detalles.
+     */
     static func createRegisterDetailModule(forRegister register: Registro) -> UIViewController {
         
         let viewController = mainStoryboard.instantiateViewController(withIdentifier: "RegisterDetailViewController")
@@ -46,6 +49,9 @@ class RegisterDetailWireframe: RegisterDetailWireframeProtocol {
     }
     
     
+    /*
+     Función que cambia de vista a la principal.
+     */
     func comeBackView(from view: RegisterDetailViewProtocol) {
         
 

@@ -14,12 +14,10 @@ protocol RegisterListViewProtocol: class {
     var presenter: RegisterListPresenterProtocol? { get set }
     
     //PRESENTER -> VIEW
+    
     func showRegister(with register: [Registro])
-    
     func showError()
-    
     func showLoading()
-    
     func hideLoading()
     
 }
@@ -39,9 +37,7 @@ protocol RegisterListPresenterProtocol: class {
 
 protocol RegisterListInteractorInputProtocol: class {
     
-    //La variable es de tipo HotelListInteractorOutputProtocol porque es la salida del interactor.
     var presenter: RegisterListInteractorOutputProtocol? { get set }
-    
     var remoteDataManager: RegisterListRemoteDataManagerInputProtocol? { get set }
     
     //PRESENTER -> INTERACTOR
@@ -49,6 +45,7 @@ protocol RegisterListInteractorInputProtocol: class {
 }
 
 protocol RegisterListInteractorOutputProtocol: class {
+ 
     //INTERACTOR -> PRESENTER
     func didRetrieveRegisters(_ registers: [Registro])
     func onError()

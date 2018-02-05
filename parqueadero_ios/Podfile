@@ -9,6 +9,8 @@ target 'parqueadero_ios' do
     	pod 'Alamofire', '~> 4.5'
 	pod 'AlamofireObjectMapper', '~> 5.0'
 	pod 'PKHUD', '~> 5.0' 
+	
+
 
   target 'parqueadero_iosTests' do
     inherit! :search_paths

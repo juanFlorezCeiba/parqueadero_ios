@@ -9,6 +9,8 @@
 import Foundation
 
 class RegisterCreatePresenter: RegisterCreatePresenterProtocol {
+
+    
   
     var view: RegisterCreateViewProtocol?
     
@@ -16,21 +18,36 @@ class RegisterCreatePresenter: RegisterCreatePresenterProtocol {
     
     var wireframe: RegisterCreateWireframeProtocol?
     
+    /*
+     Función que le envia los datos del registro al interactor.
+     */
     func createRegister(forRegistrationNumber registrationNumber: String, forDisplacement displacement: Int, forType type: String) {
         
         interactor?.createRegister(forRegistrationNumber: registrationNumber, forDisplacement: displacement, forType: type)
     }
     
+    /*
+     Función que le indica al wireframe que cambie de vista.
+     */
     func comeBackView() {
         wireframe?.comeBackView(from: view!)
     }
     
-    func addRegister(){
-        
-    }
 }
 
 extension RegisterCreatePresenter: RegisterCreateInteractorOutputProtocol{
+   
+    /*
+     Función que le indica al view que hubo un error.
+     */
+    func showError(forError error: String) {
+        view?.showError(forError: error)
+    }
+    
+
+    /*
+     Función que le indica a la vista que el registro fue exitoso.
+     */
     func createdRegisterResponse() {
         view?.showResponse()
     }

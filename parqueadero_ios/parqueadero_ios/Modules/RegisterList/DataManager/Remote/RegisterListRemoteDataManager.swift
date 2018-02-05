@@ -25,11 +25,8 @@ class RegisterListRemoteDataManager: RegisterListRemoteDataManagerInputProtocol 
                 switch response.result {
                     
                 case .success(let registers):
-                    
-                    print("El total de registros es: \(registers.count)")
                     self.remoteRequestHandler?.onRegistersRetrieved(registers)
                 case .failure(_):
-                    print(response.result)
                     self.remoteRequestHandler?.onError()
                 }
         }

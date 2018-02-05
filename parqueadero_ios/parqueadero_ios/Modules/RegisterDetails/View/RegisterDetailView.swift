@@ -29,12 +29,10 @@ class RegisterDetailView: UIViewController {
         // Do any additional setup after loading the view.
         presenter?.viewDidLoad()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
+    /*
+     Boton para pagar registro.
+     */
     @IBAction func payParking(_ sender: UIButton) {
         
         presenter?.retrieveRegisterRate(forId: (self.register?.id)!)
@@ -46,9 +44,13 @@ class RegisterDetailView: UIViewController {
 }
 
 extension RegisterDetailView: RegisterDetailViewProtocol{
+    
+    
 
     
-    
+    /*
+     Función para mostrar los detalles de un registro.
+     */
     func showRegisterDetail(forRegister register: Registro) {
         
         self.register = register
@@ -76,12 +78,17 @@ extension RegisterDetailView: RegisterDetailViewProtocol{
         
     }
     
+    /*
+     Función para indicarle al presentador que se confirma el pago.
+     */
     func paidConfirmation(forId id: Int) {
 
         presenter?.paidConfirmation(forId: id)
     }
     
-    
+    /*
+     Función que obtiene la tarifa y la muestra al usuario a través de una uialert.
+     */
     func getRegisterRate(forRate rate: Int) {
         // self.rate = rate
         
@@ -99,13 +106,10 @@ extension RegisterDetailView: RegisterDetailViewProtocol{
         
         present(alert, animated: true, completion: nil)
     }
-
-    func dismiss() {
-        
-        print("LLWFO A LA VISTA")
-       // self.dismiss(animated: true, completion: nil)
-    }
     
+    /*
+     Función que indica al usuario que ha ocurrido un error.
+     */
     func onErrorPaying() {
         HUD.flash(.label("Hubo un problema, no se realizo el pago."), delay: 3.0)
     }

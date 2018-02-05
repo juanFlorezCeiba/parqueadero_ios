@@ -13,6 +13,7 @@ protocol RegisterCreateViewProtocol: class {
     var presenter: RegisterCreatePresenterProtocol? {get set}
     
     func showResponse()
+    func showError(forError error: String)
 
 }
 
@@ -25,6 +26,8 @@ protocol RegisterCreatePresenterProtocol: class {
     func createRegister(forRegistrationNumber registrationNumber: String, forDisplacement displacement: Int, forType type: String)
 
     func comeBackView()
+    func showError(forError error: String)
+
 }
 
 protocol RegisterCreateInteractorInputProtocol: class {
@@ -37,6 +40,8 @@ protocol RegisterCreateInteractorInputProtocol: class {
 protocol RegisterCreateInteractorOutputProtocol: class {
     
     func createdRegisterResponse()
+    func showError(forError error: String)
+
 }
 
 
@@ -51,6 +56,7 @@ protocol RegisterCreateRemoteDataManagerInputProtocol: class {
 protocol RegisterCreateRemoteDataManagerOutputProtocol: class {
     
     func createdRegisterResponse()
+    func showError(forError error: String)
 }
 
 protocol RegisterCreateWireframeProtocol: class {

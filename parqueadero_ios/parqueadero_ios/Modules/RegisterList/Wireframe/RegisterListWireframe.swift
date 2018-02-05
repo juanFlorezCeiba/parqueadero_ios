@@ -16,7 +16,9 @@ class RegisterListWireframe: RegisterListWireframeProtocol {
     }
     
     
-    
+    /*
+     Función que crea los modulos de la vista lista.
+     */
     static func createRegisterListModule() -> UIViewController {
         
         let navController = storyboard.instantiateViewController(withIdentifier: "RegisterNavigationController")
@@ -45,6 +47,9 @@ class RegisterListWireframe: RegisterListWireframeProtocol {
         return UIViewController()
     }
     
+    /*
+     Función que muestra la vista de detalles.
+     */
     func presenterRegisterDetailScreen(from view: RegisterListViewProtocol, forRegister register: Registro) {
         
         let registerDetailViewController = RegisterDetailWireframe.createRegisterDetailModule(forRegister: register)
@@ -55,7 +60,9 @@ class RegisterListWireframe: RegisterListWireframeProtocol {
         }
     }
     
-    
+    /*
+     Función que muestra la vista de creación.
+     */
     func presenterRegisterCreateScreen(from view: RegisterListViewProtocol) {
         
         let registerCreateViewController = RegisterCreateWireframe.createRegisterCreateModule()

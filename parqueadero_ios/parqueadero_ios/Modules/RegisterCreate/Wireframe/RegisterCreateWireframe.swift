@@ -16,6 +16,9 @@ class RegisterCreateWireframe: RegisterCreateWireframeProtocol {
         return UIStoryboard(name: "Main", bundle: Bundle.main)
     }
     
+    /*
+     Función que permite crear el modulo de creación de registros.
+     */
     static func createRegisterCreateModule() -> UIViewController {
         
         let viewController = mainStoryboard.instantiateViewController(withIdentifier: "RegisterCreateViewController")
@@ -41,10 +44,12 @@ class RegisterCreateWireframe: RegisterCreateWireframeProtocol {
             return viewController
         }
         
-        
         return UIViewController()
     }
     
+    /*
+     Función que cambia de vista a la vista principal.
+     */
     func comeBackView(from view: RegisterCreateViewProtocol){
         
         if let sourceView = view as? UIViewController {

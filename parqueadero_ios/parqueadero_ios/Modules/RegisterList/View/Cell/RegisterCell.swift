@@ -16,6 +16,7 @@ class RegisterCell: UITableViewCell {
     @IBOutlet weak var registrationNumberLabel: UILabel!
     
     
+    //Función para mapear un objeto en la celda.
     func set(forRegister register: Registro) {
         idLabel.text = "\(String(describing: register.id!))"
         
@@ -36,17 +37,4 @@ class RegisterCell: UITableViewCell {
         registrationNumberLabel.text = register.vehiculo?.placa
         
     }
-    
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

@@ -15,7 +15,7 @@ class RegisterListInteractor: RegisterListInteractorInputProtocol {
     var remoteDataManager: RegisterListRemoteDataManagerInputProtocol?
     
     /*
-     Función que le indica al remoteDataManager que obtenga los datos de los registros.
+     Función que le indica al remoteDataManager que obtenga los registros.
      */
     func retrieveRegisterList() {
         
@@ -34,6 +34,9 @@ extension RegisterListInteractor: RegisterListRemoteDataManagerOutputProtocol{
         presenter?.didRetrieveRegisters(registers)
     }
     
+    /*
+     Función que le indica al presentador que ha ocurrido un error.
+     */
     func onError() {
         presenter?.onError()
     }

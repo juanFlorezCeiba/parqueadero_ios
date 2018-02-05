@@ -457,8 +457,8 @@
 		B1A99B5D2027FACC00BC9A7D /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				B11A9FEB2024A3FD005EE343 /* RegisterDetails */,
 				B17C140C20224B37000ED23E /* RegisterList */,
+				B11A9FEB2024A3FD005EE343 /* RegisterDetails */,
 				B1A99B532027F9FC00BC9A7D /* RegisterCreate */,
 			);
 			path = Modules;

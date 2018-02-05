@@ -19,9 +19,7 @@ protocol RegisterDetailViewProtocol: class {
     func getRegisterRate(forRate rate: Int)
     
     func paidConfirmation(forId id: Int)
-    
-    func dismiss()
-    
+        
     func onErrorPaying()
     
 }
@@ -62,7 +60,6 @@ protocol RegisterDetailInteractorInputProtocol: class {
 protocol RegisterDetailInteractorOutputProtocol: class {
     
     func didRetrieveRegisterRate(rate: Int)
-    func onError()
     
     func comeBackView()
     func onErrorPaying()

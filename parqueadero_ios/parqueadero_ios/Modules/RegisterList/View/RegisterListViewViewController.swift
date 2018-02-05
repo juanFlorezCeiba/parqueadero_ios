@@ -25,33 +25,44 @@ class RegisterListView: UIViewController {
     
     var filteredRegisters = [Registro]()
 
+    private let refreshControl = UIRefreshControl()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Setup the Search Controller
+        // Se configura el searchController
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Escriba la placa"
+        searchController.searchBar.placeholder = "Escribe la placa"
         navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = true
         definesPresentationContext = true
+        
+        //Se añade el pull to refresh.
+        refreshControl.addTarget(self, action: #selector(refreshRegisters(_:)), for: .valueChanged)
+        registerTableView.addSubview(refreshControl)
         
         //Solicita al presentador que cargue la vista.
         presenter?.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         presenter?.viewDidLoad()
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-
+    /*
+     Función para refrescar los registros con el pull to refresh.
+     */
+    @objc private func refreshRegisters(_ sender: Any) {
+        // Fetch Weather Data
+        presenter?.viewDidLoad()
+        registerTableView.reloadData()
+        refreshControl.endRefreshing()
+        
+    }
     
     //MARK: - UISearch Methods
     
@@ -76,7 +87,9 @@ class RegisterListView: UIViewController {
         return searchController.isActive && !searchBarIsEmpty()
     }
     
-    
+    /*
+     Boton para añadir un nuevo registro.
+     */
     @IBAction func addButton(_ sender: UIBarButtonItem) {
         presenter?.addRegister()
     }
@@ -164,10 +177,16 @@ extension RegisterListView: UITableViewDataSource, UITableViewDelegate {
         
         presenter?.showRegisterDetail(forRegister: register)
     }
+    
+
+    
 }
 
+
+// MARK: - UISearchResultsUpdating Delegate
+
 extension RegisterListView: UISearchResultsUpdating {
-    // MARK: - UISearchResultsUpdating Delegate
+
     func updateSearchResults(for searchController: UISearchController) {
         filterContentForSearchText(searchController.searchBar.text!)
     }

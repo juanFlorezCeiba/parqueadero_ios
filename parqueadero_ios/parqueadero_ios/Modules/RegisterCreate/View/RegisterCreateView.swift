@@ -22,11 +22,10 @@ class RegisterCreateView: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+
+    /*
+     Boton que crear un nuevo registro.
+     */
     @IBAction func registerButton(_ sender: UIButton) {
         
         let registrationNumber: String = registrationNumberText.text!
@@ -58,7 +57,17 @@ class RegisterCreateView: UIViewController {
 }
 
 extension RegisterCreateView: RegisterCreateViewProtocol {
+   
+    /*
+     Función que muestra un error al usuario.
+     */
+    func showError(forError error: String) {
+        HUD.flash(.label(error), delay: 2.5)
+    }
     
+    /*
+     Función que le indica al usuario que el registro ha sido exitoso.
+     */
     func showResponse() {
         HUD.flash(.label("El registro ha sido creado."), delay: 2.5)
         presenter?.comeBackView()

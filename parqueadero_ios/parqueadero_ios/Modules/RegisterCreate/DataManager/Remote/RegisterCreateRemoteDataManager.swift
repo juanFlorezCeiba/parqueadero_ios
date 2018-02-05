@@ -12,6 +12,10 @@ import Alamofire
 class RegisterCreateRemoteDataManager: RegisterCreateRemoteDataManagerInputProtocol {
     var remoteRequestHandler: RegisterCreateRemoteDataManagerOutputProtocol?
     
+    
+    /*
+     Función que crea el registro.
+     */
     func createRegister(forRegistrationNumber registrationNumber: String, forDisplacement displacement: Int, forType type: String) {
         
         var url : String?
@@ -33,18 +37,24 @@ class RegisterCreateRemoteDataManager: RegisterCreateRemoteDataManagerInputProto
         Alamofire
             .request(url!, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil)
             .validate()
-            .responseJSON { (response) in
+            .responseData { (response) in
                 
                 switch response.result{
-                case .success:
-                    
-                    self.remoteRequestHandler?.createdRegisterResponse()
-                
-                case .failure:
-                    print("ERROR")
-                
+                case .success(let data):
+           
+                    if let newJSON = try? JSONSerialization.jsonObject(with: data, options: []) {
+                        let array = newJSON as! [String:Any]
+                        let message : String = array["message"] as! String
+                        self.remoteRequestHandler?.showError(forError: message)
+                    } else {
+                        self.remoteRequestHandler?.createdRegisterResponse()
+                    }
+                 
+                case .failure(let error):
+                    self.remoteRequestHandler?.showError(forError: error as! String)
+                 
+                }
         }
-    }
     
     }
     

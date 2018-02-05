@@ -26,11 +26,16 @@ class RegisterListPresenter: RegisterListPresenterProtocol {
         view?.showLoading()
         interactor?.retrieveRegisterList()
     }
-    
+    /*
+     Función para mostrar  la vista de detalles.
+     */
     func showRegisterDetail(forRegister register: Registro) {
         wireframe?.presenterRegisterDetailScreen(from: view!, forRegister: register)
     }
     
+    /*
+     Función para mostrar la vista de creación.
+     */
     func addRegister() {
         wireframe?.presenterRegisterCreateScreen(from: view!)
     }

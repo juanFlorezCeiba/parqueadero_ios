@@ -13,6 +13,9 @@ class RegisterDetailRemoteDataManager: RegisterDetailRemoteDataManagerInputProto
    
     var remoteRequestHandler: RegisterDetailRemoteDataManagerOutputProtocol?
     
+    /*
+     Función que obtiene la tarifa de la API.
+     */
     func retrieveRegisterRate(forId id: Int) {
         let url : String = "\(Endpoints.ApiParqueadero.obtenerTotalTarifa.url)/\(id)"
         Alamofire
@@ -27,6 +30,9 @@ class RegisterDetailRemoteDataManager: RegisterDetailRemoteDataManagerInputProto
 
     }
     
+    /*
+     Función que realiza el pago de un registro y posteriormente procede al cambio de vista.
+     */
     func paidConfirmation(forId id: Int) {
         
         let url: String = "\(Endpoints.ApiParqueadero.pagarTarifa.url)/\(id)"
